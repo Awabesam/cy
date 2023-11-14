@@ -149,8 +149,8 @@ section{
 
 .title{
     font-size: 2em;
-    color: #038C65;
-    margin-top: 30px    ;
+    color: #016649;
+    margin-top: 30px;
 }
 
 .content{
@@ -232,15 +232,16 @@ section{
 
 
 .content .C-Card{
-    box-shadow: 0 5px 25px rgba(1, 1, 1 ,50%);
+    box-shadow: 0 30px 25px rgba(1, 1, 1 ,50%);
     border-radius: 15px;
 }
 
 .C-Card{
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
+    background-color: #01261C;
+    border: 1px solid #01261C;
+    color: #ffffff;
     min-height: 6em;
-    width: 17em;
+    width: 18em;
     overflow: hidden;
     border-radius: 10px;
     transition: 0.7s ease;
@@ -442,7 +443,9 @@ section{
     }
 
 }
-
+.Z{
+    color:red;
+}
 
 @media (min-width: 768px){
     .mobile-nav{
