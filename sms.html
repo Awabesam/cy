@@ -4,70 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sms.css">
 </head>
 <body>
     <div class="container">
-        <h1>working contact from</h1>
-        <div class="main">
-            <form action="">
-                <div class="form-input">
-                    <label for="">Name</label><br>
-                    <input type="text" placeholder="Enter your Name:" id="name">
-                </div>
+        <div class="message-card">
+            <div class="logo-pic">
+               <a href="index.html"><img src="images/hacker.png" alt="logo-pic" width="150px"></a> 
+            </div>
+            <div class="title">
+                <h1><a class="s" href="index.html">Cyber</a></h1>
+            </div>
+            <form onsubmit="SendEmail(); reset(); return false;">
 
-                <div class="form-input">
-                    <label for="">Email</label><br>
-                    <input type="text" placeholder="Enter your Email:" id="email">
-                </div>
-
-                <div class="form-input">
-                    <label for="">Cintact Number</label><br>
-                    <input type="text" placeholder="Enter your Cintact Number:" id="contact">
-                </div>
-
-                <div class="form-input">
-                    <label for="">Subject</label><br>
-                    <input type="text" placeholder="Enter your Cintact Subject:" id="subject">
-                </div>
-
-                <div class="form-input">
-                    <label for="">messages</label><br>
-                    <textarea name="" id="message" cols="31" rows="4" placeholder="Enter your message...."></textarea>
-                </div>
-
-                <div class="form-input">
-                    <button type="button" onclick="SendEmail()">Send Email</button>
-                </div>
-
+                <input type="text" id="name" placeholder="your name" required>
+                <input type="email" id="email" placeholder="email id" required>
+                <input type="text" id="phone" placeholder="phone no" required>
+                <textarea id="message" cols="30" rows="4" placeholder="leave your message"></textarea>
+                <button id="submit" type="submit">send</button>
             </form>
-
         </div>
     </div>
 
+
+
+
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-    <script>
+        <script>
         function SendEmail(){
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let contact = document.getElementById("contact").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
-
-    let body = "Name:" + name + "<br/> Email:" + email + "<br/> contact Number:" + contact + "<br/> subject:" + subject + "<br/> message:" + message;
-
-    Email.send({
+        Email.send({
     SecureToken : "6e8254a3-c23e-4534-b16a-3c94d7faba09",
     To : 'awabesam97@gmail.com',
     From : "awabesam97@gmail.com",
-    Subject : "message From contact From",
-    Body : body
+    Subject : "test email",
+    Body : "name:  " + document.getElementById("name").value
+            + "<br> Email:  " + document.getElementById("email").value
+            + "<br> phone no:  " + document.getElementById("phone").value
+            + "<br> message:  " + document.getElementById("message").value
 }).then(
-    message => alert(message)
+    message => alert("message sent succesfully")
 );
             
         }
     </script>
+
 </body>
 </html>
